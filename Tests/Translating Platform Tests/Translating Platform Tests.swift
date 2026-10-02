@@ -1,6 +1,5 @@
 import Dependencies
 import Dependencies_Test_Support
-import Foundation
 import Language
 import Testing
 
@@ -40,7 +39,7 @@ struct `Translating Platform Tests` {
         func `Integer spell-out in Dutch`() {
             let result = 42.numberInWriting(language: .dutch)
 
-            let normalized = result.replacingOccurrences(of: "\u{00AD}", with: "")
+            let normalized = String(String.UnicodeScalarView(result.unicodeScalars.filter { $0 != "\u{00AD}" }))
             #expect(normalized == "tweeënveertig")
         }
 

@@ -1,4 +1,3 @@
-import Foundation
 import Testing
 import Translating_Platform
 
@@ -167,7 +166,7 @@ struct `TranslatedString Tests` {
 
         @Test
         func `Date placeholder functionality`() {
-            let placeholder = Date.placeholder()
+            let placeholder = datePlaceholder()
 
             #expect(placeholder[.dutch] == "__ ________________ 2021")
             #expect(placeholder[.english] == "________________ __, 2021")

@@ -1,14 +1,13 @@
-import Foundation
 import Testing
 
 @Test func `locale Language Identifiers`() {
 
-    Locale.isoLanguageCodes.sorted(by: <).forEach { code in
+    Locales.isoLanguageCodes.forEach { code in
         print(code)
     }
 
-    Locale.availableIdentifiers.sorted().forEach { identifier in
+    Locales.availableIdentifiers.forEach { identifier in
         print(identifier)
     }
-    print("Locale.availableIdentifiers: ", Locale.availableIdentifiers.count)
+    print("Locale.availableIdentifiers: ", Locales.availableIdentifiers.count)
 }
