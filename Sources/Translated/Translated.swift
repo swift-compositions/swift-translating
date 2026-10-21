@@ -172,14 +172,14 @@ private let languageFallbackChains: [Language: [Language]] = [
     .nepali: [.english],
     .northernNdebele: [.english],
     .norwegian: [.english],
-    .norwegianBokmål: [.norwegian, .english],
+    .norwegianBokmal: [.norwegian, .english],
     .norwegianNynorsk: [.norwegian, .english],
     .occitan: [.spanish, .english],
     .ojibwe: [.english],
     .oriya: [.english],
     .oromo: [.english],
     .ossetian: [.russian, .english],
-    .pāli: [.english],
+    .pali: [.english],
     .persian: [.arabic, .english],
     .polish: [.english],
     .portuguese: [.english],
@@ -230,7 +230,7 @@ private let languageFallbackChains: [Language: [Language]] = [
     .uzbek: [.english],
     .venda: [.english],
     .vietnamese: [.english],
-    .volapük: [.english],
+    .volapuk: [.english],
     .wallon: [.french, .english],
     .welsh: [.english],
     .westernFrisian: [.dutch, .english],
@@ -1261,10 +1261,10 @@ extension Translated {
 
     public var norwegianBokmål: A {
         get {
-            self[.norwegianBokmål]
+            self[.norwegianBokmal]
         }
         set {
-            self[.norwegianBokmål] = newValue
+            self[.norwegianBokmal] = newValue
         }
     }
 
@@ -1324,10 +1324,10 @@ extension Translated {
 
     public var pāli: A {
         get {
-            self[.pāli]
+            self[.pali]
         }
         set {
-            self[.pāli] = newValue
+            self[.pali] = newValue
         }
     }
 
@@ -1783,10 +1783,10 @@ extension Translated {
 
     public var volapük: A {
         get {
-            self[.volapük]
+            self[.volapuk]
         }
         set {
-            self[.volapük] = newValue
+            self[.volapuk] = newValue
         }
     }
 

@@ -234,7 +234,7 @@ extension BCP47.LanguageTag {
 
     public static let norwegian = BCP47.LanguageTag(language: .no)
 
-    public static let norwegianBokmål = BCP47.LanguageTag(language: .nb)
+    public static let norwegianBokmal = BCP47.LanguageTag(language: .nb)
 
     public static let norwegianNynorsk = BCP47.LanguageTag(language: .nn)
 
@@ -258,7 +258,7 @@ extension BCP47.LanguageTag {
 
     public static let pushto = BCP47.LanguageTag(language: .ps)
 
-    public static let pāli = BCP47.LanguageTag(language: .pi)
+    public static let pali = BCP47.LanguageTag(language: .pi)
 
     public static let quechua = BCP47.LanguageTag(language: .qu)
 
@@ -350,7 +350,7 @@ extension BCP47.LanguageTag {
 
     public static let vietnamese = BCP47.LanguageTag(language: .vi)
 
-    public static let volapük = BCP47.LanguageTag(language: .vo)
+    public static let volapuk = BCP47.LanguageTag(language: .vo)
 
     public static let wallon = BCP47.LanguageTag(language: .wa)
 
