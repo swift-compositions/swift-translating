@@ -10,6 +10,9 @@ extension Numeric {
         let formatter = NumberFormatter()
         formatter.numberStyle = .spellOut
         formatter.locale = language.locale
-        return formatter.string(for: value)!
+        guard let string = formatter.string(for: value) else {
+            fatalError("NumberFormatter produced no spell-out string")
+        }
+        return string
     }
 }

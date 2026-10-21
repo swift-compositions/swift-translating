@@ -184,6 +184,9 @@ extension TranslatedString {
             .zulu: "\(closedRange.lowerBound) kuze kube \(closedRange.upperBound)",
         ]
 
-        self.init(default: translations[.english]!, dictionary: translations)
+        guard let english = translations[.english] else {
+            fatalError("Translations must contain an English entry")
+        }
+        self.init(default: english, dictionary: translations)
     }
 }

@@ -5,27 +5,26 @@ import Translated
 public import Translated_String
 
 extension TranslatedString {
-    nonisolated(unsafe) private static let timeUnits:
-        Translated<[(KeyPath<DateComponents, Int?>, SinglePlural<String>)]> = [
-            .english: [
-                (\.year, .init(single: "year", plural: "years")),
-                (\.month, .init(single: "month", plural: "months")),
-                (\.weekOfYear, .init(single: "week", plural: "weeks")),
-                (\.day, .init(single: "day", plural: "days")),
-                (\.hour, .init(single: "hour", plural: "hours")),
-                (\.minute, .init(single: "minute", plural: "minutes")),
-                (\.second, .init(single: "second", plural: "seconds")),
-            ],
-            .dutch: [
-                (\.year, .init(single: "jaar", plural: "jaar")),
-                (\.month, .init(single: "maand", plural: "maanden")),
-                (\.weekOfYear, .init(single: "week", plural: "weken")),
-                (\.day, .init(single: "dag", plural: "dagen")),
-                (\.hour, .init(single: "uur", plural: "uur")),
-                (\.minute, .init(single: "minuut", plural: "minuten")),
-                (\.second, .init(single: "seconde", plural: "seconden")),
-            ],
-        ]
+    nonisolated(unsafe) private static let timeUnits: Translated<[(KeyPath<DateComponents, Int?>, SinglePlural<String>)]> = [
+        .english: [
+            (\.year, .init(single: "year", plural: "years")),
+            (\.month, .init(single: "month", plural: "months")),
+            (\.weekOfYear, .init(single: "week", plural: "weeks")),
+            (\.day, .init(single: "day", plural: "days")),
+            (\.hour, .init(single: "hour", plural: "hours")),
+            (\.minute, .init(single: "minute", plural: "minutes")),
+            (\.second, .init(single: "second", plural: "seconds")),
+        ],
+        .dutch: [
+            (\.year, .init(single: "jaar", plural: "jaar")),
+            (\.month, .init(single: "maand", plural: "maanden")),
+            (\.weekOfYear, .init(single: "week", plural: "weken")),
+            (\.day, .init(single: "dag", plural: "dagen")),
+            (\.hour, .init(single: "uur", plural: "uur")),
+            (\.minute, .init(single: "minuut", plural: "minuten")),
+            (\.second, .init(single: "seconde", plural: "seconden")),
+        ],
+    ]
 
     public init(_ dateComponents: DateComponents) {
         let dutchValue =

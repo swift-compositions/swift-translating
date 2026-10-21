@@ -4,11 +4,10 @@ extension String {
 
     public var any: Self {
         if let first = self.first {
-            if Set<String>.vowels.contains(String(first).lowercased()) {
-                return "an \(self)"
-            } else {
+            guard Set<String>.vowels.contains(String(first).lowercased()) else {
                 return "a \(self)"
             }
+            return "an \(self)"
         }
         return self
     }
@@ -45,27 +44,32 @@ extension String {
 
     public var period: String {
         guard let last = self.last else { return self }
-        if last == "." { return self } else { return self + "." }
+        guard last != "." else { return self }
+        return self + "."
     }
 
     public var semicolon: String {
         guard let last = self.last else { return self }
-        if last == ";" { return self } else { return self + ";" }
+        guard last != ";" else { return self }
+        return self + ";"
     }
 
     public var colon: String {
         guard let last = self.last else { return self }
-        if last == ":" { return self } else { return self + ":" }
+        guard last != ":" else { return self }
+        return self + ":"
     }
 
     public var comma: String {
         guard let last = self.last else { return self }
-        if last == "," { return self } else { return self + "," }
+        guard last != "," else { return self }
+        return self + ","
     }
 
     public var questionmark: String {
         guard let last = self.last else { return self }
-        if last == "?" { return self } else { return self + "?" }
+        guard last != "?" else { return self }
+        return self + "?"
     }
 }
 

@@ -23,6 +23,8 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/swift-ietf/swift-bcp-47.git", branch: "main"),
+        .package(url: "https://github.com/swift-iso/swift-iso-639.git", branch: "main"),
+        .package(url: "https://github.com/swift-iso/swift-iso-3166.git", branch: "main"),
         .package(
             url: "https://github.com/swift-compositions/swift-dependencies.git",
             branch: "main"
@@ -43,7 +45,9 @@ let package = Package(
         .target(
             name: "Language",
             dependencies: [
-                .product(name: "BCP 47", package: "swift-bcp-47")
+                .product(name: "BCP 47", package: "swift-bcp-47"),
+                .product(name: "ISO 639", package: "swift-iso-639"),
+                .product(name: "ISO 3166", package: "swift-iso-3166"),
             ]
         ),
         .testTarget(

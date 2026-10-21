@@ -1,9 +1,19 @@
 extension String {
     public static func mockFirstName() -> Self { mockVoornaam() }
-    public static func mockVoornaam() -> Self { [Self].voornamen.randomElement()! }
+    public static func mockVoornaam() -> Self {
+        guard let name = [Self].voornamen.randomElement() else {
+            fatalError("voornamen must not be empty")
+        }
+        return name
+    }
 
     public static func mockSurname() -> Self { mockAchternaam() }
-    public static func mockAchternaam() -> Self { [Self].achternamen.randomElement()! }
+    public static func mockAchternaam() -> Self {
+        guard let name = [Self].achternamen.randomElement() else {
+            fatalError("achternamen must not be empty")
+        }
+        return name
+    }
 }
 
 extension String {

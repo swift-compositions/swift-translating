@@ -411,11 +411,10 @@ extension TranslatedString {
     public var any: Self {
         let anyEnglish: String = {
             if let first = english.first {
-                if Set<String>.vowels.contains(String(first).lowercased()) {
-                    return "an \(english)"
-                } else {
+                guard Set<String>.vowels.contains(String(first).lowercased()) else {
                     return "a \(english)"
                 }
+                return "an \(english)"
             }
             return english
         }()

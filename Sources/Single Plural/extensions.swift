@@ -114,21 +114,19 @@ extension Int {
     )
         -> TranslatedString
     {
-        if self == 1 {
-            return .init("\(self) ") + single
-        } else {
+        guard self == 1 else {
             return .init("\(self) ") + multiple
         }
+        return .init("\(self) ") + single
     }
 }
 
 extension SinglePlural where A == String {
     func `for`(_ int: Int) -> A {
-        if int == 1 {
-            return .init("\(int) ") + self.single
-        } else {
+        guard int == 1 else {
             return .init("\(int) ") + self.plural
         }
+        return .init("\(int) ") + self.single
     }
 }
 

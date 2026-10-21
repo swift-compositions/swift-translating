@@ -1870,7 +1870,9 @@ extension Translated: ExpressibleByDictionaryLiteral {
             fatalError("Dictionary literal must contain at least one translation")
         }
 
-        let defaultValue = dictionary[.english] ?? elements.first!.1
+        guard let defaultValue = dictionary[.english] ?? elements.first?.1 else {
+            fatalError("Dictionary literal must contain at least one translation")
+        }
 
         self.init(default: defaultValue, dictionary: dictionary)
     }
