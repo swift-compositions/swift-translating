@@ -1259,7 +1259,7 @@ extension Translated {
         }
     }
 
-    public var norwegianBokmal: A {
+    public var norwegianBokmål: A {
         get {
             self[.norwegianBokmal]
         }
@@ -1322,7 +1322,7 @@ extension Translated {
         }
     }
 
-    public var pali: A {
+    public var pāli: A {
         get {
             self[.pali]
         }
@@ -1781,7 +1781,7 @@ extension Translated {
         }
     }
 
-    public var volapuk: A {
+    public var volapük: A {
         get {
             self[.volapuk]
         }
