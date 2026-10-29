@@ -30,6 +30,12 @@ let package = Package(
             branch: "main"
         ),
     ],
+    traits: [
+        .trait(
+            name: "TranslatingPlatform",
+            description: "Translating Platform and the dependencies only it needs"
+        )
+    ],
     targets: [
 
         .target(
@@ -106,7 +112,11 @@ let package = Package(
         .target(
             name: "Translating Platform",
             dependencies: [
-                .product(name: "Dependencies", package: "swift-dependencies"),
+                .product(
+                    name: "Dependencies",
+                    package: "swift-dependencies",
+                    condition: .when(traits: ["TranslatingPlatform"])
+                ),
                 .target(name: "Language"),
                 .target(name: "Single Plural"),
                 .target(name: "Translated"),

@@ -1,9 +1,11 @@
-public import Foundation
-import Language
+#if TranslatingPlatform
+    public import Foundation
+    import Language
 
-extension Language {
+    extension Language {
 
-    public var locale: Foundation.Locale {
-        Foundation.Locale(identifier: String(describing: self))
+        public var locale: Foundation.Locale {
+            Foundation.Locale(identifier: String(describing: self))
+        }
     }
-}
+#endif

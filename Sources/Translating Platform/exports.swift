@@ -1,1 +1,3 @@
-@_exported public import Translating
+#if TranslatingPlatform
+    @_exported public import Translating
+#endif
