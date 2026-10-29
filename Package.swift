@@ -21,6 +21,12 @@ let package = Package(
         .library(name: "Translating Test Support", targets: ["Translating Test Support"]),
         .library(name: "Translations", targets: ["Translations"]),
     ],
+    traits: [
+        .trait(
+            name: "TranslatingPlatform",
+            description: "Translating Platform and the dependencies only it needs"
+        )
+    ],
     dependencies: [
         .package(url: "https://github.com/swift-ietf/swift-bcp-47.git", branch: "main"),
         .package(url: "https://github.com/swift-iso/swift-iso-639.git", branch: "main"),
@@ -29,12 +35,6 @@ let package = Package(
             url: "https://github.com/swift-compositions/swift-dependencies.git",
             branch: "main"
         ),
-    ],
-    traits: [
-        .trait(
-            name: "TranslatingPlatform",
-            description: "Translating Platform and the dependencies only it needs"
-        )
     ],
     targets: [
 
