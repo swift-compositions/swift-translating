@@ -19,6 +19,7 @@ let package = Package(
         .library(name: "Translated String", targets: ["Translated String"]),
         .library(name: "Translating Platform", targets: ["Translating Platform"]),
         .library(name: "Translating Test Support", targets: ["Translating Test Support"]),
+        .library(name: "Translating Dependencies", targets: ["Translating Dependencies"]),
         .library(name: "Translations", targets: ["Translations"]),
     ],
     traits: [
@@ -146,6 +147,28 @@ let package = Package(
             dependencies: [
                 .target(name: "Translations"),
                 .product(name: "Dependencies Test Support", package: "swift-dependencies"),
+            ]
+        ),
+        .target(
+            name: "Translating Dependencies",
+            dependencies: [
+                .target(name: "Language"),
+                .target(name: "Translated"),
+                .target(name: "Translated String"),
+                .target(name: "Translating Platform"),
+                .product(name: "Dependencies", package: "swift-dependencies"),
+            ]
+        ),
+        .testTarget(
+            name: "Translating Dependencies Tests",
+            dependencies: [
+                "Translating Dependencies",
+                .target(name: "Single Plural"),
+                .target(name: "Translating"),
+                .product(name: "Dependencies Test Support", package: "swift-dependencies"),
+            ],
+            swiftSettings: [
+                .unsafeFlags(["-Xfrontend", "-disable-cross-import-overlays"])
             ]
         ),
     ],
