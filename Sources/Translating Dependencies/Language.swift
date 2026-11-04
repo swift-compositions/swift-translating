@@ -10,7 +10,7 @@ extension Dependency.Values {
     }
 }
 
-extension Language: @retroactive Dependency.Key {
+extension Language: Dependency.Key {
 
     public static var liveValue: Self {
         .english
@@ -25,7 +25,7 @@ extension Language: @retroactive Dependency.Key {
     }
 }
 
-extension Translated: @retroactive CustomStringConvertible where A == String {
+extension Translated: CustomStringConvertible where A == String {
 
     public var description: String {
         @Dependency(\.language) var language
@@ -33,7 +33,7 @@ extension Translated: @retroactive CustomStringConvertible where A == String {
     }
 }
 
-extension Translated: @retroactive Comparable where A: Comparable {
+extension Translated: Comparable where A: Comparable {
 
     public static func < (lhs: Translated<A>, rhs: Translated<A>) -> Bool {
         @Dependency(\.language) var language
