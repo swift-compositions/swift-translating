@@ -10,7 +10,7 @@ extension Dependency.Values {
     }
 }
 
-extension Language: Dependency.Key {
+extension Language: @retroactive Dependency.Key {
 
     public static var liveValue: Self {
         .english
