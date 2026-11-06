@@ -162,7 +162,7 @@ let package = Package(
         .testTarget(
             name: "Translating Dependencies Tests",
             dependencies: [
-                "Translating Dependencies",
+                .target(name: "Translating Dependencies"),
                 .target(name: "Single Plural"),
                 .target(name: "Translating"),
                 .product(name: "Dependencies Test Support", package: "swift-dependencies"),
