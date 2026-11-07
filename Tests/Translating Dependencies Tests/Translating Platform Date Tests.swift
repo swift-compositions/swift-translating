@@ -9,18 +9,16 @@
 
     @testable import Translating_Dependencies
 
-extension `Translating Platform Date Tests`.`Translating Platform Date Tests` {
-        @Suite(
-            .dependency(\.language, .english)
-        )
-        struct `Translating Platform Date Tests` {
-            @Suite struct Unit {}
-            @Suite struct `Edge Case` {}
-            @Suite struct Integration {}
-        }
-}
+    @Suite(
+        .dependency(\.language, .english)
+    )
+    struct `Translating Platform Date Tests` {
+        @Suite struct Unit {}
+        @Suite struct `Edge Case` {}
+        @Suite struct Integration {}
+    }
 
-    extension `Translating Platform Date Tests`.`Translating Platform Date Tests`.`Translating Platform Date Tests` {
+    extension `Translating Platform Date Tests` {
         @Suite
         struct `Date Formatted Extension` {
 
