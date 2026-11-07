@@ -6,11 +6,6 @@ public struct Translated<A> {
 
     internal var dictionary: [Language: A]
 
-    private enum CodingKeys: String, CodingKey {
-        case `default`
-        case dictionary
-    }
-
     public init(
         `default`: A,
         dictionary: [Language: A]
@@ -1903,5 +1898,13 @@ extension Translated<String> {
     public static func + (lhs: String, rhs: Self) -> Self {
         let newTranslations = rhs.dictionary.mapValues { lhs + $0 }
         return Self(default: lhs + rhs.default, dictionary: newTranslations)
+    }
+}
+
+extension Translated {
+
+    private enum CodingKeys: String, CodingKey {
+        case `default`
+        case dictionary
     }
 }
