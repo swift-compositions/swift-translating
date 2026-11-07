@@ -1,6 +1,6 @@
 import Language
-public import Translated
-public import Translated_String
+import Translated
+import Translated_String
 
 
 extension SinglePlural {
