@@ -69,13 +69,6 @@ extension SinglePlural {
 }
 
 extension SinglePlural {
-
-    public enum Variant: String, Codable, Hashable, Sendable {
-
-        case single
-
-        case plural
-    }
 }
 
 extension SinglePlural {
