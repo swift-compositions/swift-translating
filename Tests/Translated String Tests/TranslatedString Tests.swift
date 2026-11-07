@@ -7,7 +7,9 @@ import Translating_Platform
 
 @Suite
 struct `TranslatedString Tests` {
+}
 
+extension `TranslatedString Tests` {
     @Suite
     struct `Expressible By Dictionary Literal` {
 

@@ -7,6 +7,83 @@ import Testing
 struct `Translated Tests` {
 
     @Suite
+    struct `Edge Case` {
+
+        @Test
+        func `Empty translation dictionary`() {
+            let translated = Translated<String>(
+                default: "Default",
+                dictionary: [:]
+            )
+
+            #expect(translated[.english] == "Default")
+            #expect(translated[.dutch] == "Default")
+            #expect(translated[.french] == "Default")
+        }
+
+        @Test
+        func `Generic type other than String`() {
+            let translated = Translated<Int>(
+                default: 0,
+                dictionary: [
+
+                    .dutch: 2,
+                    .french: 3,
+                ]
+            )
+
+            #expect(translated[.dutch] == 2)
+            #expect(translated[.french] == 3)
+            #expect(translated[.german] == 0)
+        }
+
+        @Test
+        func `Very long language names`() {
+            let longString = String(repeating: "A", count: 1000)
+            let translated = Translated(
+                default: "Short",
+                dictionary: [.french: longString]
+            )
+
+            #expect(translated[.french] == longString)
+            #expect(translated[.dutch] == "Short")
+        }
+
+        @Test
+        func `Call as function syntax`() {
+            let translated = Translated(
+                default: "Default",
+                dictionary: [
+                    .dutch: "Hallo",
+                    .french: "Bonjour",
+                ]
+            )
+
+            #expect(translated(.dutch) == "Hallo")
+            #expect(translated(.french) == "Bonjour")
+            #expect(translated(.german) == "Default")
+        }
+
+        @Test
+        func `AllCases property returns all translations`() {
+            let translated = Translated(
+                default: "Default",
+                dictionary: [
+                    .dutch: "Hallo",
+                    .french: "Bonjour",
+                ]
+            )
+
+            let allCases = translated.allCases
+            #expect(allCases.contains("Hallo"))
+            #expect(allCases.contains("Bonjour"))
+            #expect(allCases.count == 2)
+        }
+    }
+}
+
+extension `Translated Tests` {
+    @Suite
     struct `Basic Functionality` {
 
         @Test
@@ -272,80 +349,5 @@ struct `Translated Tests` {
             #expect(translated[.english] == "Hallo")
         }
 
-    }
-
-    @Suite
-    struct `Edge Case` {
-
-        @Test
-        func `Empty translation dictionary`() {
-            let translated = Translated<String>(
-                default: "Default",
-                dictionary: [:]
-            )
-
-            #expect(translated[.english] == "Default")
-            #expect(translated[.dutch] == "Default")
-            #expect(translated[.french] == "Default")
-        }
-
-        @Test
-        func `Generic type other than String`() {
-            let translated = Translated<Int>(
-                default: 0,
-                dictionary: [
-
-                    .dutch: 2,
-                    .french: 3,
-                ]
-            )
-
-            #expect(translated[.dutch] == 2)
-            #expect(translated[.french] == 3)
-            #expect(translated[.german] == 0)
-        }
-
-        @Test
-        func `Very long language names`() {
-            let longString = String(repeating: "A", count: 1000)
-            let translated = Translated(
-                default: "Short",
-                dictionary: [.french: longString]
-            )
-
-            #expect(translated[.french] == longString)
-            #expect(translated[.dutch] == "Short")
-        }
-
-        @Test
-        func `Call as function syntax`() {
-            let translated = Translated(
-                default: "Default",
-                dictionary: [
-                    .dutch: "Hallo",
-                    .french: "Bonjour",
-                ]
-            )
-
-            #expect(translated(.dutch) == "Hallo")
-            #expect(translated(.french) == "Bonjour")
-            #expect(translated(.german) == "Default")
-        }
-
-        @Test
-        func `AllCases property returns all translations`() {
-            let translated = Translated(
-                default: "Default",
-                dictionary: [
-                    .dutch: "Hallo",
-                    .french: "Bonjour",
-                ]
-            )
-
-            let allCases = translated.allCases
-            #expect(allCases.contains("Hallo"))
-            #expect(allCases.contains("Bonjour"))
-            #expect(allCases.count == 2)
-        }
     }
 }

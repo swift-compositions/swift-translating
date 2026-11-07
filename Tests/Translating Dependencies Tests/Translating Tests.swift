@@ -15,7 +15,9 @@ struct `Translating Tests` {
     @Suite struct Unit {}
     @Suite struct `Edge Case` {}
     @Suite struct Integration {}
+}
 
+extension `Translating Tests` {
     @Suite
     struct `Closure Based Initializer` {
 

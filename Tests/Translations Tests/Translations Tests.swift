@@ -7,7 +7,9 @@ import Testing
 
 @Suite("Translations")
 struct Tests {
+}
 
+extension Tests {
     @Suite
     struct `ClosedRange Rendering` {
 

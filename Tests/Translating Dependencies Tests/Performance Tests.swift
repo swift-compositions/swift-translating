@@ -21,7 +21,9 @@ struct Performance {
     @Suite struct Unit {}
     @Suite struct `Edge Case` {}
     @Suite struct Integration {}
+}
 
+extension Performance {
     @Suite(
         .serialized
     )
