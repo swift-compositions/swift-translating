@@ -159,7 +159,7 @@ extension Performance {
                     var translatedStrings: [Translated<String>] = []
                     translatedStrings.reserveCapacity(stringCount)
 
-                    for i in 1...stringCount {
+                    (1...stringCount).forEach { i in
                         let translated = Translated<String> { language in
                             "String \(i) in \(language)"
                         }
