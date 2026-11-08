@@ -1,6 +1,6 @@
-public import Translated
 import Dependencies
 import Language
+public import Translated
 
 extension Translated {
     public init(
