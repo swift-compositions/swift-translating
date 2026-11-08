@@ -7,17 +7,19 @@ import Translated_String
 
 @testable import Translating_Dependencies
 
-@Suite(
-    .dependency(\.language, .english)
-)
-struct `Language Dependency Tests` {
-    @Suite struct Unit {}
-    @Suite struct `Edge Case` {}
-    @Suite struct Integration {}
+extension `Language Dependency Tests`.`Language Dependency Tests` {
+    @Suite(
+        .dependency(\.language, .english)
+    )
+    struct `Language Dependency Tests` {
+        @Suite struct Unit {}
+        @Suite struct `Edge Case` {}
+        @Suite struct Integration {}
 
+    }
 }
 
-extension `Language Dependency Tests` {
+extension `Language Dependency Tests`.`Language Dependency Tests` {
     @Suite
     struct `Language Dependency Integration` {
 

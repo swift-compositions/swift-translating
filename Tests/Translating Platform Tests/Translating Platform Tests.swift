@@ -5,12 +5,14 @@ import Testing
 
 @testable import Translating_Platform
 
-@Suite
-struct `Translating Platform Tests` {
+extension `Translating Platform Tests`.`Translating Platform Tests` {
+    @Suite
+    struct `Translating Platform Tests` {
 
+    }
 }
 
-extension `Translating Platform Tests` {
+extension `Translating Platform Tests`.`Translating Platform Tests` {
     @Suite
     struct `Preferred Language` {
 
