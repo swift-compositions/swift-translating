@@ -57,8 +57,8 @@ extension `ReadmeVerification Tests` {
         @Test
         func `Parameter-based initialization from README lines 78-85`() {
             let notification = TranslatedString(
-                "New message",
                 dutch: "Nieuw bericht",
+                english: "New message",
                 french: "Nouveau message",
                 german: "Neue Nachricht"
             )
