@@ -1,1 +1,1 @@
-@_exported import Translated
+@_exported public import Translated

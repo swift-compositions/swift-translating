@@ -1,4 +1,4 @@
-@_exported import Language
-@_exported import Single_Plural
-@_exported import Translated
-@_exported import Translated_String
+@_exported public import Language
+@_exported public import Single_Plural
+@_exported public import Translated
+@_exported public import Translated_String
