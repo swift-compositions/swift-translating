@@ -127,7 +127,7 @@ extension `Translated Tests` {
         }
     }
 
-    @Suite("Initializer Tests")
+    @Suite
     struct Initializer {
 
         @Test

@@ -5,7 +5,7 @@ import Testing
 @testable import Translated_String
 @testable import Translations
 
-@Suite("Translations")
+@Suite
 struct Tests {
 }
 

@@ -4,7 +4,7 @@ import Testing
 @testable import Single_Plural
 @testable import Translated
 
-@Suite("Time unit content integrity")
+@Suite
 struct Tests {
 
     private static let units: [(name: String, value: Translated<SinglePlural<String>>)] = [

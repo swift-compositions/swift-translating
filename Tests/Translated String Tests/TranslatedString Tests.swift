@@ -91,7 +91,7 @@ extension `TranslatedString Tests` {
         }
     }
 
-    @Suite("Punctuation and Formatting")
+    @Suite
     struct Punctuation {
 
         @Test

@@ -3,7 +3,7 @@ import Testing
 @testable import Language
 @testable import Translated
 
-@Suite("Translated Codable wire format")
+@Suite
 struct Tests {
 
     private struct Fixture: Codable {
