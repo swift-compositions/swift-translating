@@ -121,7 +121,10 @@ extension `TranslatedString Tests` {
             let separator = TranslatedString(.and)
 
             #expect(separator[.english] == "and")
-
+            #expect(separator[.dutch] == "en")
+            #expect(separator[.french] == "et")
+            #expect(separator[.german] == "und")
+            #expect(separator[.spanish] == "y")
         }
 
         @Test
@@ -129,6 +132,8 @@ extension `TranslatedString Tests` {
             let separator = TranslatedString(.or)
 
             #expect(separator[.english] == "or")
+            #expect(separator[.dutch] == "of")
+            #expect(separator[.german] == "oder")
         }
 
         @Test
@@ -136,6 +141,8 @@ extension `TranslatedString Tests` {
             let separator = TranslatedString(.andOr)
 
             #expect(separator[.english] == "and/or")
+            #expect(separator[.dutch] == "en/of")
+            #expect(separator[.german] == "und/oder")
         }
 
         @Test

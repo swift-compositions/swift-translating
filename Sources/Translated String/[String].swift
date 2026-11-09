@@ -23,13 +23,31 @@ extension TranslatedString {
     public init(_ separator: [String].Separator) {
         switch separator {
         case .and:
-            self = [.english: "and"]
+            self = [
+                .dutch: "en",
+                .english: "and",
+                .french: "et",
+                .german: "und",
+                .spanish: "y",
+            ]
 
         case .or:
-            self = [.english: "or"]
+            self = [
+                .dutch: "of",
+                .english: "or",
+                .french: "ou",
+                .german: "oder",
+                .spanish: "o",
+            ]
 
         case .andOr:
-            self = [.english: "and/or"]
+            self = [
+                .dutch: "en/of",
+                .english: "and/or",
+                .french: "et/ou",
+                .german: "und/oder",
+                .spanish: "y/o",
+            ]
         }
     }
 }

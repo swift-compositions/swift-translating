@@ -41,13 +41,13 @@ extension [String] {
 extension [String] {
 
     public func formattedList(separator: ListSeparator = .and) -> Translated<Self> {
-        .mapping({ _ in
+        .mapping({ language in
             switch separator {
             case .and:
-                return self.formattedItems(with: "and")
+                return self.formattedItems(with: TranslatedString(.and)(language))
 
             case .or:
-                return self.formattedItems(with: "or")
+                return self.formattedItems(with: TranslatedString(.or)(language))
 
             case .individual:
                 return self.formattedItems(with: "")
