@@ -5,6 +5,7 @@ import Language
 import Testing
 import Translated
 import Translated_String
+import Translating
 
 @testable import Translating_Dependencies
 
@@ -244,6 +245,33 @@ extension `Translating Tests` {
                 #expect(translated[.french] == "Bonjour")
                 #expect(translated[.german] == "Default")
             }
+        }
+    }
+}
+
+extension `Translating Tests` {
+    @Suite
+    struct Emptiness {
+
+        @Test
+        func `A string with only a non-English, non-Dutch translation is not empty`() {
+            let german = TranslatedString(default: "", dictionary: [.german: "Hallo"])
+
+            #expect(!german.isEmpty)
+        }
+
+        @Test
+        func `A string whose default and every translation are empty is empty`() {
+            let blank = TranslatedString(default: "", dictionary: [.english: "", .french: ""])
+
+            #expect(blank.isEmpty)
+        }
+
+        @Test
+        func `A string with only a non-empty default is not empty`() {
+            let fallback = TranslatedString(default: "Hello", dictionary: [.english: "", .dutch: ""])
+
+            #expect(!fallback.isEmpty)
         }
     }
 }

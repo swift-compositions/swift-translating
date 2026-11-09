@@ -24,7 +24,7 @@ extension TranslatedString {
     }
 
     public var isEmpty: Bool {
-        self.english.isEmpty && self.dutch.isEmpty
+        self.default.isEmpty && self.dictionary.values.allSatisfy(\.isEmpty)
     }
 
     public var capitalized: Self {
