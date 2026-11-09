@@ -351,3 +351,22 @@ extension `Translated Tests` {
 
     }
 }
+
+extension `Translated Tests` {
+    @Suite
+    struct Concatenation {
+
+        @Test
+        func `Each side of a sum resolves through its own fallbacks`() {
+            let lhs = Translated<String>(default: "Hello ", dictionary: [.dutch: "Hallo "])
+            let rhs = Translated<String>(default: "world", dictionary: [.afrikaans: "wêreld"])
+
+            let sum = lhs + rhs
+
+            #expect(sum[.afrikaans] == lhs[.afrikaans] + rhs[.afrikaans])
+            #expect(sum[.afrikaans] == "Hallo wêreld")
+            #expect(sum[.dutch] == "Hallo world")
+            #expect(sum[.english] == "Hello world")
+        }
+    }
+}

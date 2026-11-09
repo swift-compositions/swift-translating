@@ -4,7 +4,7 @@ public struct Translated<A> {
 
     package var `default`: A
 
-    internal var dictionary: [Language: A]
+    package var dictionary: [Language: A]
 
     public init(
         `default`: A,
@@ -1879,9 +1879,7 @@ extension Translated<String> {
         let allKeys = Set(lhs.dictionary.keys).union(rhs.dictionary.keys)
 
         let newTranslations = Dictionary(
-            uniqueKeysWithValues: allKeys.map {
-                ($0, (lhs.dictionary[$0] ?? lhs.default) + (rhs.dictionary[$0] ?? rhs.default))
-            }
+            uniqueKeysWithValues: allKeys.map { ($0, lhs[$0] + rhs[$0]) }
         )
 
         return Self(
