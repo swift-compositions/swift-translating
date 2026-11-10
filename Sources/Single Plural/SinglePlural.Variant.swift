@@ -10,3 +10,13 @@ extension SinglePlural {
         case plural
     }
 }
+
+extension SinglePlural.Variant {
+    /// The same form for a `SinglePlural` of another element type.
+    func carried<B>() -> SinglePlural<B>.Variant {
+        switch self {
+        case .single: .single
+        case .plural: .plural
+        }
+    }
+}

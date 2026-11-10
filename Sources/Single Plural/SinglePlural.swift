@@ -105,7 +105,7 @@ extension SinglePlural {
         return SinglePlural<B>(
             single: transform(self.single),
             plural: transform(self.plural),
-            preferred: self.preferred
+            preferred: self.preferred.carried()
         )
     }
 
@@ -113,7 +113,7 @@ extension SinglePlural {
         return SinglePlural<B>(
             single: transform(self.single).single,
             plural: transform(self.plural).plural,
-            preferred: self.preferred
+            preferred: self.preferred.carried()
         )
     }
 }
